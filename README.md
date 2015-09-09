@@ -1,4 +1,4 @@
-# generator-grunt-aws-lambda [![Build Status](https://secure.travis-ci.org/someuser/generator-grunt-aws-lambda.png?branch=master)](https://travis-ci.org/someuser/generator-grunt-aws-lambda)
+# generator-grunt-aws-lambda [![Build Status](https://secure.travis-ci.org/k6zrPw3XmAG5jy/generator-grunt-aws-lambda.png?branch=master)](https://travis-ci.org/k6zrPw3XmAG5jy/generator-grunt-aws-lambda)
 
 > [Yeoman](http://yeoman.io) generator for [grunt-aws-lambda](https://github.com/Tim-B/grunt-aws-lambda)
 
