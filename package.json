@@ -1,6 +1,6 @@
 {
   "name": "generator-grunt-aws-lambda",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Yeoman generator for grunt-aws-lambda",
   "license": "MIT",
   "main": "app/index.js",

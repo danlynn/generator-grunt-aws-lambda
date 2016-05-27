@@ -22,6 +22,22 @@ module.exports = yeoman.generators.Base.extend({
           default: 'my-lambda-function'
         },
         {
+          type: 'list',
+          name: 'version',
+          message: 'Which version of the Node runtime would you like to run your function against?',
+          choices: [
+            {
+              name: "v0.1",
+              value: "v0.1"
+            },
+            {
+              name: "v4.3",
+              value: "v4.3"
+            }
+          ],
+          default: "v4.3"
+        },
+        {
           type: 'input',
           name: 'arn',
           message: 'What is the ARN of your Lambda function (optional)?'
@@ -37,10 +53,25 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('package.json'),
         this.props
       );
-      this.fs.copy(
-        this.templatePath('_index.js'),
-        this.destinationPath('index.js')
-      );
+      switch (this.props.version) {
+        case 'v0.10':
+          this.fs.copy(
+            this.templatePath('_index0.1.js'),
+            this.destinationPath('index.js')
+          );
+          break;
+        case 'v4.3':
+          this.fs.copy(
+            this.templatePath('_index4.3.js'),
+            this.destinationPath('index.js')
+          );
+          break;
+        default:
+          this.fs.copy(
+            this.templatePath('_index4.3.js'),
+            this.destinationPath('index.js')
+          );
+      }
       this.fs.copy(
         this.templatePath('_.npmignore'),
         this.destinationPath('.npmignore')
